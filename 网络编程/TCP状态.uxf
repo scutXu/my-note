@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="13.2">
-  <zoom_level>5</zoom_level>
+<diagram program="umlet" version="14.2">
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>420</x>
-      <y>70</y>
-      <w>45</w>
-      <h>20</h>
+      <x>312</x>
+      <y>40</y>
+      <w>72</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>Closed</panel_attributes>
     <additional_attributes/>
@@ -15,10 +15,10 @@
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>420</x>
-      <y>165</y>
-      <w>45</w>
-      <h>20</h>
+      <x>312</x>
+      <y>192</y>
+      <w>72</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>SYN_Sent</panel_attributes>
     <additional_attributes/>
@@ -26,22 +26,22 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>435</x>
-      <y>85</y>
-      <w>75</w>
-      <h>90</h>
+      <x>336</x>
+      <y>64</y>
+      <w>160</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
-send SYN(connect)</panel_attributes>
+send SYN J(connect block)</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>370</x>
-      <y>75</y>
-      <w>60</w>
-      <h>110</h>
+      <x>232</x>
+      <y>48</y>
+      <w>96</w>
+      <h>176</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 time out</panel_attributes>
@@ -50,10 +50,10 @@ time out</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>420</x>
-      <y>245</y>
-      <w>45</w>
-      <h>20</h>
+      <x>312</x>
+      <y>320</y>
+      <w>72</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>Established</panel_attributes>
     <additional_attributes/>
@@ -61,22 +61,22 @@ time out</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>435</x>
-      <y>180</y>
-      <w>105</w>
-      <h>75</h>
+      <x>336</x>
+      <y>216</y>
+      <w>304</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
-receive SYN,ACK. send ACK</panel_attributes>
+receive SYN K,ACK J+1. send ACK K+1(connect return)</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>600</x>
-      <y>70</y>
-      <w>45</w>
-      <h>20</h>
+      <x>688</x>
+      <y>40</y>
+      <w>72</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>Closed</panel_attributes>
     <additional_attributes/>
@@ -84,10 +84,10 @@ receive SYN,ACK. send ACK</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>600</x>
-      <y>125</y>
-      <w>45</w>
-      <h>20</h>
+      <x>688</x>
+      <y>128</y>
+      <w>72</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>Listen</panel_attributes>
     <additional_attributes/>
@@ -95,10 +95,10 @@ receive SYN,ACK. send ACK</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>595</x>
-      <y>205</y>
-      <w>50</w>
-      <h>20</h>
+      <x>680</x>
+      <y>256</y>
+      <w>80</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>SYN_received</panel_attributes>
     <additional_attributes/>
@@ -106,10 +106,10 @@ receive SYN,ACK. send ACK</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>615</x>
-      <y>85</y>
-      <w>35</w>
-      <h>50</h>
+      <x>712</x>
+      <y>64</y>
+      <w>56</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 (listen)</panel_attributes>
@@ -118,22 +118,22 @@ receive SYN,ACK. send ACK</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>615</x>
-      <y>140</y>
-      <w>100</w>
-      <h>75</h>
+      <x>712</x>
+      <y>152</y>
+      <w>272</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
-receiveSYN. send SYN,ACK</panel_attributes>
+receiveSYN J. send SYN K,ACK J+1(accpet block)</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>600</x>
-      <y>285</y>
-      <w>45</w>
-      <h>20</h>
+      <x>688</x>
+      <y>384</y>
+      <w>72</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>Established</panel_attributes>
     <additional_attributes/>
@@ -141,22 +141,22 @@ receiveSYN. send SYN,ACK</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>615</x>
-      <y>220</y>
-      <w>55</w>
-      <h>75</h>
+      <x>712</x>
+      <y>280</y>
+      <w>184</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
-receive ACK</panel_attributes>
+receive ACK K+1(accpet return)</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>415</x>
-      <y>335</y>
-      <w>45</w>
-      <h>20</h>
+      <x>304</x>
+      <y>464</y>
+      <w>72</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>FIN_Wait_1</panel_attributes>
     <additional_attributes/>
@@ -164,22 +164,22 @@ receive ACK</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>435</x>
-      <y>260</y>
-      <w>65</w>
-      <h>85</h>
+      <x>336</x>
+      <y>344</y>
+      <w>144</w>
+      <h>136</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
-send FIN(close)</panel_attributes>
+send FIN M(close block)</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>415</x>
-      <y>425</y>
-      <w>45</w>
-      <h>20</h>
+      <x>304</x>
+      <y>608</y>
+      <w>72</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>FIN_wait_2</panel_attributes>
     <additional_attributes/>
@@ -187,10 +187,10 @@ send FIN(close)</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>600</x>
-      <y>375</y>
-      <w>45</w>
-      <h>20</h>
+      <x>688</x>
+      <y>528</y>
+      <w>72</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>Close_Wait</panel_attributes>
     <additional_attributes/>
@@ -198,34 +198,34 @@ send FIN(close)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>615</x>
-      <y>300</y>
-      <w>85</w>
-      <h>85</h>
+      <x>712</x>
+      <y>408</y>
+      <w>216</w>
+      <h>136</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
-receive FIN, send ACK</panel_attributes>
+receive FIN M, send ACK M+1(read)??</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>435</x>
-      <y>350</y>
-      <w>55</w>
-      <h>85</h>
+      <x>336</x>
+      <y>488</y>
+      <w>168</w>
+      <h>136</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
-receive ACK</panel_attributes>
+receive ACK M+1(close block)</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>600</x>
-      <y>475</y>
-      <w>45</w>
-      <h>20</h>
+      <x>688</x>
+      <y>688</y>
+      <w>72</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>Last_ACK</panel_attributes>
     <additional_attributes/>
@@ -233,22 +233,22 @@ receive ACK</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>615</x>
-      <y>390</y>
-      <w>40</w>
-      <h>95</h>
+      <x>712</x>
+      <y>552</y>
+      <w>144</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
-send FIN</panel_attributes>
+send FIN N(close block)</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>415</x>
-      <y>525</y>
-      <w>45</w>
-      <h>20</h>
+      <x>304</x>
+      <y>768</y>
+      <w>72</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>Time_Wait</panel_attributes>
     <additional_attributes/>
@@ -256,35 +256,114 @@ send FIN</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>435</x>
-      <y>440</y>
-      <w>85</w>
-      <h>95</h>
+      <x>336</x>
+      <y>632</y>
+      <w>232</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
-receive FIN, send ACK</panel_attributes>
+receive FIN N, send ACK N+1(close block)</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>615</x>
-      <y>75</y>
-      <w>170</w>
-      <h>515</h>
+      <x>712</x>
+      <y>48</y>
+      <w>288</w>
+      <h>824</h>
     </coordinates>
-    <panel_attributes>lt=-&gt;</panel_attributes>
-    <additional_attributes>10.0;840.0;10.0;1010.0;310.0;1010.0;320.0;10.0;60.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;
+receive ACK N+1(close return)</panel_attributes>
+    <additional_attributes>10.0;840.0;10.0;1010.0;340.0;1010.0;340.0;10.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>295</x>
-      <y>75</y>
-      <w>155</w>
-      <h>515</h>
+      <x>112</x>
+      <y>48</y>
+      <w>248</w>
+      <h>824</h>
     </coordinates>
-    <panel_attributes>lt=-&gt;</panel_attributes>
+    <panel_attributes>lt=-&gt;
+(close return)</panel_attributes>
     <additional_attributes>290.0;940.0;290.0;1010.0;10.0;1010.0;10.0;10.0;250.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>488</x>
+      <y>128</y>
+      <w>232</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>270.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>624</x>
+      <y>208</y>
+      <w>88</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;80.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>624</x>
+      <y>280</y>
+      <w>96</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>100.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>472</x>
+      <y>400</y>
+      <w>240</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>280.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>496</x>
+      <y>472</y>
+      <w>216</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;100.0;250.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>616</y>
+      <w>152</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;100.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>568</x>
+      <y>704</y>
+      <w>208</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>240.0;170.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
