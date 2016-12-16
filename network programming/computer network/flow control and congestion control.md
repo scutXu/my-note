@@ -11,7 +11,6 @@ It provides a mechanism for the receiver to control the transmission speed, so t
 接收窗口：已经接收但未发送对应ACK的Packet的最大区域。  
 实现机制：a receiver gives a transmitter permission to transmit data until a (receive)window is full  
 自动重传请求（automatic repeat-request）：
-<!---->
 - Go Back N： 
 - Selective Repeat：
 ##TCP实现
@@ -25,6 +24,8 @@ The condition in which congestion prevents or limits useful communication
 Avoid congestive collapse resulting from oversubscription
 ##实现方式
 ##TCP实现
+
+
 
 
 
