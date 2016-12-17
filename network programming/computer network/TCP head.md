@@ -1,15 +1,14 @@
 ![Alt text](TCP-Header.png)
-<!---->
-##Source port (16 bits) 源端口号
+
+###Source port (16 bits) 源端口号
 ###Destination port (16 bits) 目标端口号
 ###Sequence number (32 bits) 序列号
 - 若SYN标志位为1，则该该值为初始序列号
 - 否则，该值为：初始序列号 + ？？？所占的字节数
 
 ###Acknowledgment number (32 bits) 确认号
-？？？
 ###Data offset (4 bits) 
- - TCP头部大小，取决于Options部分的大小，范围在20~60bytes
+ - TCP头部大小，取决于套接字选项的大小，范围在20~60bytes
  
 ###Reserved (3 bits)
  - 保留位
@@ -44,6 +43,4 @@ TCP套接字选项最多包括三个域
 - 长度（1byte，可选）：该值代表整个选项的长度，即类型+长度+数据总共占用的字节数
 - 数据（变长，可选）
 
-###Padding
-保证TCP头部大小为32的倍数，内容填充为0
 
