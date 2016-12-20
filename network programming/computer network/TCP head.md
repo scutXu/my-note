@@ -33,12 +33,12 @@
 TCP套接字选项最多包括三个域
 
 - 类型（1byte，必须）
- + 0-End of options list
- + 1-No operation
- + 2-Maximum segment size
- + 3-Window scale
- + 4-Selective Acknowledgement permitted
- + ...
+	 + 0-End of options list
+	 + 1-No operation
+	 + 2-Maximum segment size
+	 + 3-Window scale
+	 + 4-Selective Acknowledgement permitted
+	 + ...
  
 - 长度（1byte，可选）：该值代表整个选项的长度，即类型+长度+数据总共占用的字节数
 - 数据（变长，可选）
