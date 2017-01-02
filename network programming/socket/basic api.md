@@ -4,6 +4,10 @@
 
 extern int errno;
 ```
+```
+include <stdio.h>
+void perror (const char * s)
+```
 ##socket
 
 ```

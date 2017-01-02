@@ -13,14 +13,16 @@ AF_UNIX
 ```
 ###端口号
 ```
-<netinet/in.h>
-typedef	__uint16_t	in_port_t;
+#include <netinet/in.h>
+typedef __uint16_t	in_port_t;
 ```
 ###ipv4地址
 ```
-<netinet/in.h>
+#include <netinet/in.h>
+typedef __uint32_t	in_addr_t;
 
-typedef	__uint32_t	in_addr_t;
+#define INADDR_ANY ((in_addr_t) 0x00000000)
+#define INADDR_LOOPBACK	((in_addr_t) 0x7f000001) /* 环回地址 127.0.0.1 */
 
 struct in_addr
 {
@@ -29,7 +31,7 @@ struct in_addr
 ```
 ###ipv4套接字地址
 ```
-<netinet/in.h>
+#include <netinet/in.h>
 
 #define __SOCK_SIZE__	16
 struct sockaddr_in
@@ -44,7 +46,7 @@ struct sockaddr_in
 ```
 ###ipv4通用套接字地址（仅作为参数类型）
 ```
-<sys/socket.h>
+#include <sys/socket.h>
 
 struct sockaddr {
   sa_family_t sa_family;	//地址族
@@ -112,6 +114,26 @@ s : short
 l : long
 ```
 ##地址转换函数###
+- ipv4转换函数
+```
+#include <arpa/inet.h>
 
+//点分十进制字符串转ipv4地址
+int inet_aton (const char *cp, 
+			   struct in_addr *inp)
+			   
+#return
+0	//error
+1	//success
+
+
+//ipv4地址转点分十进制字符串（返回的字符串在静态内存中，所以该函数不可重入）
+char *inet_ntoa (struct in_addr __in)
+```
+- 通用地址转换函数
+```
+#include <arpa/inet.h>
+
+```
 	
 
