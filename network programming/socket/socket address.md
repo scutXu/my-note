@@ -21,8 +21,17 @@ typedef __uint16_t	in_port_t;
 #include <netinet/in.h>
 typedef __uint32_t	in_addr_t;
 
-#define INADDR_ANY ((in_addr_t) 0x00000000)
-#define INADDR_LOOPBACK	((in_addr_t) 0x7f000001) /* 环回地址 127.0.0.1 */
+/* Address to accept any incoming messages.  */
+#define	INADDR_ANY		((in_addr_t) 0x00000000)
+
+/* Address to send to all hosts.  */
+#define	INADDR_BROADCAST	((in_addr_t) 0xffffffff)
+
+/* Address indicating an error return.  */
+#define	INADDR_NONE		((in_addr_t) 0xffffffff)
+
+/* Network number for local host loopback.  */
+#define INADDR_LOOPBACK	((in_addr_t) 0x7f000001) 
 
 struct in_addr
 {
