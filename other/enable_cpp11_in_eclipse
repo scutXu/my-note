@@ -1,0 +1,24 @@
+
+
+There's two things you have to do, first you need to setup your compiler, then you need to setup CDT's language processor. Since you didn't mention which compiler you're using, I'll assume it's GCC but the steps will be similar for other compilers. (Note that you need a compiler that supports C++11, of course.)
+
+Setting up the compiler is fairly straightforward:
+
+    Right click your project and click Properties
+    Under C/C++ Build click Settings
+    Under GCC C++ Compiler, click Miscellaneous
+    In the Other Flags box, append "-std=c++11" to the list of tokens.
+    Click Apply and OK
+
+At this point you should be able to rebuild your project and get it to run. But CDT still may show errors for C++11 includes. Here's how you can resolve that:
+
+    Right click your project and click Properties
+    Under C/C++ General click "Preprocessor Include Paths, Macros"
+    Select the Providers tab
+    There should be an item in the list that says something like "GCC Built in Compiler Settings". Select this entry.
+    Uncheck the "Use global provider..." option
+    Under the list there's an box that says "Command to get compiler specs." Append "-std=c++0x" to this.
+    Move the "GCC Built in Compiler Settings" provider at the top of the list using the 'Move Up' button on the right.
+    Click Apply and then OK.
+    Back in your Eclipse workspace, select the Project Menu, C/C++ Index, and click "Re-resolve unresolved includes."
+
