@@ -1,0 +1,10 @@
+####启动线程
+线程在构造函数执行后启动，std::thread接收任何callable的类型作为构造函数参数
+```
+void threadFunc() {}
+
+struct Callable {
+	void operator()() {}
+}
+```
+std::thread是Movable但Non-Copyable的
