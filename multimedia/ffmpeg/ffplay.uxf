@@ -4,7 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>160</x>
+      <x>200</x>
       <y>80</y>
       <w>140</w>
       <h>60</h>
@@ -18,7 +18,7 @@ int       serial;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>40</x>
+      <x>80</x>
       <y>190</y>
       <w>450</w>
       <h>180</h>
@@ -32,8 +32,8 @@ int               size;
 int64_t           duration;        #所有packet的总duration
 int               abort_request;
 int               serial;          #每次seek会更新该值并赋值到
-                                   接下来读取到的新Packet，用
-                                   于标志不同的视频段
+                                    接下来读取到的新Packet，用
+                                    于标志不同的视频段
 SDL_mutex *       mutex;
 SDL_cond *        cond;</panel_attributes>
     <additional_attributes/>
@@ -41,7 +41,7 @@ SDL_cond *        cond;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>510</x>
+      <x>550</x>
       <y>0</y>
       <w>160</w>
       <h>130</h>
@@ -60,31 +60,33 @@ int *   queueserial;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>780</x>
+      <x>820</x>
       <y>190</y>
       <w>220</w>
-      <h>190</h>
+      <h>220</h>
     </coordinates>
     <panel_attributes>Frame
 --
-AVFrame *    frame;
-AVSubtitile  sub;
-int          serial;
-double       pts;
-double       duration;
-int64_t      pos;
-int          width;
-int          height;
-int          format;
-AVRational   sar;
-int          uploaded;
-int          flip_v;</panel_attributes>
+AVFrame *      frame;
+AVSubtitile    sub;
+int            serial;
+double         pts;
+double         duration;      #该Frame的时长
+int64_t        pos;           #文件中的字节位置
+SDL_Texture *  bmp;
+int            allocated;
+int            width;
+int            height;
+int            format;
+AVRational     sar;
+int            uploaded;
+int            flip_v;</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>140</x>
+      <x>180</x>
       <y>130</y>
       <w>110</w>
       <h>80</h>
@@ -95,7 +97,7 @@ int          flip_v;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>520</x>
+      <x>560</x>
       <y>200</y>
       <w>210</w>
       <h>180</h>
@@ -118,7 +120,7 @@ SDL_cond *     cond;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>720</x>
+      <x>760</x>
       <y>260</y>
       <w>80</w>
       <h>30</h>
@@ -129,7 +131,7 @@ SDL_cond *     cond;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>480</x>
+      <x>520</x>
       <y>260</y>
       <w>60</w>
       <h>40</h>
@@ -140,26 +142,51 @@ m2=1</panel_attributes>
     <additional_attributes>10.0;10.0;40.0;10.0</additional_attributes>
   </element>
   <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>290</x>
+      <y>360</y>
+      <w>30</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>380</y>
-      <w>490</w>
-      <h>290</h>
+      <x>80</x>
+      <y>490</y>
+      <w>550</w>
+      <h>340</h>
     </coordinates>
     <panel_attributes>Decoder
 --
 AVPacket          pkt;
-AVPacket          pkt_temp;
+AVPacket          pkt_temp;            #存放从PacketQueue取出的Packet，解
+                                        码失败或一个（音频）Packet需要分多
+                                        次解码时，下一次的解码直接操作于该
+                                        变量而不需要从队列中取新的Packet
+                                        
 PacketQueue *     queue;
 AVCodecContext *  avctx;
-int               pkt_serial;
+int               pkt_serial;          #从PacketQueue获取的最新的Packet对
+                                        应的serial
+                                        
 int               finished;
-int               packet_pending;      #标志是否需要取新Packet，音
-                                        频Packet可能包含多个Frame
-int64_t           start_pts;
-AVRational        start_pts_tb;
+int               packet_pending;      #标志pkt_temp是否仍有效，若有效则不
+                                        需要从PacketQueue获取新Packet
+                                        
+int64_t           start_pts;           #只对音频解码器有意义，会被赋值为
+                                        AVStream::start_pts
+                                        
+AVRational        start_pts_tb;        #只对音频解码器有意义，会被赋值为
+                                        AVStream::time_base
 
+int64_t           next_pts;
+AVRational        next_pts_tb;
 SDL_cond *        empty_queue_cond;
 SDL_Thread *      decoder_tid;</panel_attributes>
     <additional_attributes/>
