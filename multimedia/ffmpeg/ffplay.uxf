@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>200</x>
-      <y>80</y>
+      <x>820</x>
+      <y>150</y>
       <w>140</w>
       <h>60</h>
     </coordinates>
@@ -18,8 +18,8 @@ int       serial;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>80</x>
-      <y>190</y>
+      <x>630</x>
+      <y>270</y>
       <w>450</w>
       <h>180</h>
     </coordinates>
@@ -41,8 +41,8 @@ SDL_cond *        cond;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>550</x>
-      <y>0</y>
+      <x>1410</x>
+      <y>660</y>
       <w>160</w>
       <h>130</h>
     </coordinates>
@@ -60,8 +60,8 @@ int *   queueserial;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>820</x>
-      <y>190</y>
+      <x>1130</x>
+      <y>0</y>
       <w>220</w>
       <h>220</h>
     </coordinates>
@@ -86,19 +86,19 @@ int            flip_v;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>180</x>
-      <y>130</y>
-      <w>110</w>
-      <h>80</h>
+      <x>880</x>
+      <y>200</y>
+      <w>30</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;60.0;90.0;10.0</additional_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>560</x>
-      <y>200</y>
+      <x>1150</x>
+      <y>280</y>
       <w>210</w>
       <h>180</h>
     </coordinates>
@@ -120,47 +120,47 @@ SDL_cond *     cond;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>760</x>
-      <y>260</y>
-      <w>80</w>
-      <h>30</h>
+      <x>1240</x>
+      <y>210</y>
+      <w>30</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;60.0;10.0</additional_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>520</x>
-      <y>260</y>
-      <w>60</w>
+      <x>1070</x>
+      <y>340</y>
+      <w>100</w>
       <h>40</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
+    <panel_attributes>lt=&lt;.
 m1=1
 m2=1</panel_attributes>
-    <additional_attributes>10.0;10.0;40.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>290</x>
-      <y>360</y>
-      <w>30</w>
-      <h>150</h>
+      <x>540</x>
+      <y>350</y>
+      <w>110</w>
+      <h>40</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
+    <panel_attributes>lt=&lt;.
 m1=1
 m2=1</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+    <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>80</x>
-      <y>490</y>
+      <x>0</x>
+      <y>210</y>
       <w>550</w>
-      <h>340</h>
+      <h>360</h>
     </coordinates>
     <panel_attributes>Decoder
 --
@@ -190,5 +190,145 @@ AVRational        next_pts_tb;
 SDL_cond *        empty_queue_cond;
 SDL_Thread *      decoder_tid;</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>740</x>
+      <y>660</y>
+      <w>600</w>
+      <h>1300</h>
+    </coordinates>
+    <panel_attributes>VideoState
+--
+
+SDL_Thread * read_tid;#读取AVPacket的线程
+AVInputFormat * iformat;
+int abort_request;
+int force_refresh;#强制画面刷新，切换showmode或者切换是否全屏时会设为1
+int paused;
+int last_paused;#在read_tid线程loop中检测paused变量的改变，paused改变后需要启动/关闭网络流
+int queue_attachments_req;
+int seek_req;
+int seek_flags;
+int64_t seek_pos;
+int64_t seek_rel;
+int read_pause_return;
+AVFormatContext *ic;
+int realtime;
+
+Clock audclk;
+Clock vidclk;
+Clock extclk;
+
+FrameQueue pictq;
+FrameQueue subpq;
+FrameQueue sampq;
+
+Decoder auddec;
+Decoder viddec;
+Decoder subdec;
+
+int audio_stream;
+
+int av_sync_type;
+
+double audio_clock;
+int audio_clock_serial;
+double audio_diff_cum; /* used for AV difference average computation */
+double audio_diff_avg_coef;
+double audio_diff_threshold;
+int audio_diff_avg_count;
+AVStream *audio_st;
+PacketQueue audioq;
+int audio_hw_buf_size;
+uint8_t *audio_buf;
+uint8_t *audio_buf1;
+unsigned int audio_buf_size; /* in bytes */
+unsigned int audio_buf1_size;
+int audio_buf_index; /* in bytes */
+int audio_write_buf_size;
+int audio_volume;
+int muted;
+struct AudioParams audio_src;
+#if CONFIG_AVFILTER
+struct AudioParams audio_filter_src;
+#endif
+struct AudioParams audio_tgt;
+struct SwrContext *swr_ctx;
+int frame_drops_early;
+int frame_drops_late;
+
+enum ShowMode {
+  SHOW_MODE_NONE = -1, SHOW_MODE_VIDEO = 0, SHOW_MODE_WAVES, SHOW_MODE_RDFT, SHOW_MODE_NB
+} show_mode;
+int16_t sample_array[SAMPLE_ARRAY_SIZE];
+int sample_array_index;
+int last_i_start;
+RDFTContext *rdft;
+int rdft_bits;
+FFTSample *rdft_data;
+int xpos;
+double last_vis_time;
+SDL_Texture *vis_texture;
+SDL_Texture *sub_texture;
+
+int subtitle_stream;
+AVStream *subtitle_st;
+PacketQueue subtitleq;
+
+double frame_timer;
+double frame_last_returned_time;
+double frame_last_filter_delay;
+int video_stream;
+AVStream *video_st;
+PacketQueue videoq;
+double max_frame_duration;      // maximum duration of a frame - above this, we consider the jump a timestamp discontinuity
+struct SwsContext *img_convert_ctx;
+struct SwsContext *sub_convert_ctx;
+int eof;
+
+char *filename;
+int width, height, xleft, ytop;
+int step;
+
+
+int last_video_stream, last_audio_stream, last_subtitle_stream;
+
+SDL_cond *continue_read_thread;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>290</x>
+      <y>560</y>
+      <w>520</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;500.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>780</x>
+      <y>440</y>
+      <w>50</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>30.0;10.0;10.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>790</x>
+      <y>450</y>
+      <w>480</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>460.0;10.0;10.0;210.0</additional_attributes>
   </element>
 </diagram>
