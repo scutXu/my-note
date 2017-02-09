@@ -41,16 +41,16 @@ SDL_cond *        cond;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1410</x>
-      <y>660</y>
-      <w>160</w>
-      <h>130</h>
+      <x>1420</x>
+      <y>450</y>
+      <w>390</w>
+      <h>210</h>
     </coordinates>
     <panel_attributes>Clock
 --
 double  pts;
-double  pts_drift;
-double  last_updated;
+double  pts_drift;#pts - last_updated
+double  last_updated;#最近一次更新pts时的格林威治时间
 double  speed;
 int     serial;
 int     paused;
@@ -196,7 +196,7 @@ SDL_Thread *      decoder_tid;</panel_attributes>
     <coordinates>
       <x>740</x>
       <y>660</y>
-      <w>600</w>
+      <w>560</w>
       <h>1300</h>
     </coordinates>
     <panel_attributes>VideoState
@@ -208,8 +208,8 @@ int abort_request;
 int force_refresh;#强制画面刷新，切换showmode或者切换是否全屏时会设为1
 int paused;
 int last_paused;#在read_tid线程loop中检测paused变量的改变，paused改变后需要启动/关闭网络流
-int queue_attachments_req;
-int seek_req;
+int queue_attachments_req;是否尝试（当视频AVStream::disposition包含ATTACHED_PIC标志位时）往视频packet队列中投入视频AVStream::attached_pic（mp3专辑封面），初始化时或发生seek时都会设为1
+int seek_req;是否发生了seek
 int seek_flags;
 int64_t seek_pos;
 int64_t seek_rel;
