@@ -1,9 +1,0 @@
-```
-int	avformat_open_input(AVFormatContext ** ps,
-						const char * url,
-						AVInputFormat * fmt,
-						AVDictionary ** options)
-
-#options
-Options would be necessary for e.g. the rawvideo demuxer, since it cannot know how to interpret raw video data otherwise. If the format turns out to be something different than raw video, those options will not be recognized by the demuxer and therefore will not be applied. Such unrecognized options are then returned in the options dictionary (recognized options are consumed)
-```

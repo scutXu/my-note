@@ -62,7 +62,7 @@ int *   queueserial;</panel_attributes>
     <coordinates>
       <x>1130</x>
       <y>0</y>
-      <w>220</w>
+      <w>350</w>
       <h>220</h>
     </coordinates>
     <panel_attributes>Frame
