@@ -1,0 +1,16 @@
+1）idr帧和i帧区别
+2）一个h264中SPS和PPS的数量
+3）SPS和PPS如何存放到flv tag中
+4）SPS和PPS存放在AVCodecContext的extradata数据域中？
+
+NAL类型
+SLICE
+SLICE_DPA
+SLICE_DPB
+SLIC_DPC
+SLICE_IDR
+SEI
+SPS
+PPS
+AUD
+FILLTER
