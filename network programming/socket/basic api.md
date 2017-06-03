@@ -97,6 +97,7 @@ int accept (int sockfd,						//监听套接字描述符
 #errno
 EAGAIN/EWOULDBLOCK						//非阻塞模式下已完成连接队列中没有可返回的连接套接字
 ECONNABORTED							//三路握手完成后，accpet调用前，对端发送了RST（连接中止）
+EINTR                                   //阻塞模式下，被系统信号中断
 ```
 ```
 从已完成连接队列中返回一个套接字给进程
