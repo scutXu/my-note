@@ -5,7 +5,7 @@
     <id>UMLState</id>
     <coordinates>
       <x>312</x>
-      <y>40</y>
+      <y>0</y>
       <w>72</w>
       <h>32</h>
     </coordinates>
@@ -16,7 +16,7 @@
     <id>UMLState</id>
     <coordinates>
       <x>312</x>
-      <y>192</y>
+      <y>152</y>
       <w>72</w>
       <h>32</h>
     </coordinates>
@@ -27,7 +27,7 @@
     <id>Relation</id>
     <coordinates>
       <x>336</x>
-      <y>64</y>
+      <y>24</y>
       <w>160</w>
       <h>144</h>
     </coordinates>
@@ -39,7 +39,7 @@ send SYN J(connect block)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>232</x>
-      <y>48</y>
+      <y>8</y>
       <w>96</w>
       <h>176</h>
     </coordinates>
@@ -51,7 +51,7 @@ time out</panel_attributes>
     <id>UMLState</id>
     <coordinates>
       <x>312</x>
-      <y>320</y>
+      <y>280</y>
       <w>72</w>
       <h>32</h>
     </coordinates>
@@ -62,7 +62,7 @@ time out</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>336</x>
-      <y>216</y>
+      <y>176</y>
       <w>304</w>
       <h>120</h>
     </coordinates>
@@ -74,7 +74,7 @@ receive SYN K,ACK J+1. send ACK K+1(connect return)</panel_attributes>
     <id>UMLState</id>
     <coordinates>
       <x>688</x>
-      <y>40</y>
+      <y>0</y>
       <w>72</w>
       <h>32</h>
     </coordinates>
@@ -85,7 +85,7 @@ receive SYN K,ACK J+1. send ACK K+1(connect return)</panel_attributes>
     <id>UMLState</id>
     <coordinates>
       <x>688</x>
-      <y>128</y>
+      <y>88</y>
       <w>72</w>
       <h>32</h>
     </coordinates>
@@ -96,7 +96,7 @@ receive SYN K,ACK J+1. send ACK K+1(connect return)</panel_attributes>
     <id>UMLState</id>
     <coordinates>
       <x>680</x>
-      <y>256</y>
+      <y>216</y>
       <w>80</w>
       <h>32</h>
     </coordinates>
@@ -107,8 +107,8 @@ receive SYN K,ACK J+1. send ACK K+1(connect return)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>712</x>
-      <y>64</y>
-      <w>56</w>
+      <y>24</y>
+      <w>64</w>
       <h>80</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
@@ -119,8 +119,8 @@ receive SYN K,ACK J+1. send ACK K+1(connect return)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>712</x>
-      <y>152</y>
-      <w>272</w>
+      <y>112</y>
+      <w>280</w>
       <h>120</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
@@ -131,7 +131,7 @@ receiveSYN J. send SYN K,ACK J+1(accpet block)</panel_attributes>
     <id>UMLState</id>
     <coordinates>
       <x>688</x>
-      <y>384</y>
+      <y>344</y>
       <w>72</w>
       <h>32</h>
     </coordinates>
@@ -142,8 +142,8 @@ receiveSYN J. send SYN K,ACK J+1(accpet block)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>712</x>
-      <y>280</y>
-      <w>184</w>
+      <y>240</y>
+      <w>192</w>
       <h>120</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
@@ -154,7 +154,7 @@ receive ACK K+1(accpet return)</panel_attributes>
     <id>UMLState</id>
     <coordinates>
       <x>304</x>
-      <y>464</y>
+      <y>424</y>
       <w>72</w>
       <h>32</h>
     </coordinates>
@@ -165,19 +165,19 @@ receive ACK K+1(accpet return)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>336</x>
-      <y>344</y>
-      <w>144</w>
+      <y>304</y>
+      <w>152</w>
       <h>136</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
-send FIN M(close block)</panel_attributes>
+send FIN M(close return)</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
       <x>304</x>
-      <y>608</y>
+      <y>568</y>
       <w>72</w>
       <h>32</h>
     </coordinates>
@@ -188,7 +188,7 @@ send FIN M(close block)</panel_attributes>
     <id>UMLState</id>
     <coordinates>
       <x>688</x>
-      <y>528</y>
+      <y>488</y>
       <w>72</w>
       <h>32</h>
     </coordinates>
@@ -199,7 +199,7 @@ send FIN M(close block)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>712</x>
-      <y>408</y>
+      <y>368</y>
       <w>216</w>
       <h>136</h>
     </coordinates>
@@ -211,19 +211,19 @@ receive FIN M, send ACK M+1(read)??</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>336</x>
-      <y>488</y>
-      <w>168</w>
+      <y>448</y>
+      <w>104</w>
       <h>136</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
-receive ACK M+1(close block)</panel_attributes>
+receive ACK M+1</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
       <x>688</x>
-      <y>688</y>
+      <y>648</y>
       <w>72</w>
       <h>32</h>
     </coordinates>
@@ -234,19 +234,19 @@ receive ACK M+1(close block)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>712</x>
-      <y>552</y>
-      <w>144</w>
+      <y>512</y>
+      <w>152</w>
       <h>152</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
-send FIN N(close block)</panel_attributes>
+send FIN N(close return)</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
       <x>304</x>
-      <y>768</y>
+      <y>728</y>
       <w>72</w>
       <h>32</h>
     </coordinates>
@@ -257,43 +257,42 @@ send FIN N(close block)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>336</x>
-      <y>632</y>
-      <w>232</w>
+      <y>592</y>
+      <w>176</w>
       <h>152</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
-receive FIN N, send ACK N+1(close block)</panel_attributes>
+receive FIN N, send ACK N+1</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>712</x>
-      <y>48</y>
+      <y>8</y>
       <w>288</w>
       <h>824</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
-receive ACK N+1(close return)</panel_attributes>
+receive ACK N+1</panel_attributes>
     <additional_attributes>10.0;840.0;10.0;1010.0;340.0;1010.0;340.0;10.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>112</x>
-      <y>48</y>
+      <y>8</y>
       <w>248</w>
       <h>824</h>
     </coordinates>
-    <panel_attributes>lt=-&gt;
-(close return)</panel_attributes>
+    <panel_attributes>lt=-&gt;</panel_attributes>
     <additional_attributes>290.0;940.0;290.0;1010.0;10.0;1010.0;10.0;10.0;250.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>488</x>
-      <y>128</y>
+      <y>88</y>
       <w>232</w>
       <h>88</h>
     </coordinates>
@@ -304,7 +303,7 @@ receive ACK N+1(close return)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>624</x>
-      <y>208</y>
+      <y>168</y>
       <w>88</w>
       <h>80</h>
     </coordinates>
@@ -315,7 +314,7 @@ receive ACK N+1(close return)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>624</x>
-      <y>280</y>
+      <y>240</y>
       <w>96</w>
       <h>72</h>
     </coordinates>
@@ -326,7 +325,7 @@ receive ACK N+1(close return)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>472</x>
-      <y>400</y>
+      <y>360</y>
       <w>240</w>
       <h>80</h>
     </coordinates>
@@ -337,7 +336,7 @@ receive ACK N+1(close return)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>496</x>
-      <y>472</y>
+      <y>432</y>
       <w>216</w>
       <h>96</h>
     </coordinates>
@@ -347,23 +346,23 @@ receive ACK N+1(close return)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>560</x>
-      <y>616</y>
-      <w>152</w>
-      <h>96</h>
+      <x>504</x>
+      <y>576</y>
+      <w>208</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;100.0;170.0;10.0</additional_attributes>
+    <additional_attributes>10.0;90.0;240.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>568</x>
-      <y>704</y>
-      <w>208</w>
-      <h>152</h>
+      <x>504</x>
+      <y>672</y>
+      <w>272</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>240.0;170.0;10.0;10.0</additional_attributes>
+    <additional_attributes>320.0;160.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>

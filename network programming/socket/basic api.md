@@ -99,9 +99,8 @@ EAGAIN/EWOULDBLOCK						//非阻塞模式下已完成连接队列中没有可返
 ECONNABORTED							//三路握手完成后，accpet调用前，对端发送了RST（连接中止）
 EINTR                                   //阻塞模式下，被系统信号中断
 ```
-```
-从已完成连接队列中返回一个套接字给进程
-```
+- accpet会从已完成连接队列中返回一个套接字给进程
+
 ##close##
 ```
 #include <unistd.h>
@@ -112,4 +111,4 @@ int close(int sockfd)
 0
 -1
 ```
-
+- 默认情况下，close会马上返回，tcp负责发送写缓冲区中的剩余内容，并接着发送FIN
