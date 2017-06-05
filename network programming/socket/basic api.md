@@ -56,9 +56,9 @@ int bind(int sockfd,
 		 const struct sockaddr * myaddr,		//特定于某种协议的本地套接字地址
 		 socklen_t addrlen)					//地址的长度
 ```
-```
-对于TCP而言，可以指定一个端口号，或指定一个IP地址，或两者都指定，或两者都不指定
-```
+
+- 对于TCP而言，可以指定一个端口号，或指定一个IP地址，或两者都指定，或两者都不指定
+
 ##connect
 ```
 #include <sys/socket.h>
@@ -74,16 +74,21 @@ int connect (int sockfd,
 ETIMEDOUT						SYN没有响应，目的ip地址不存在
 ECONNREFUSED					SYN响应是RST，目的端口没有进程在监听
 EHOSTUNREACH/ENETUNREACH
+EINPROGRESS                     非阻塞connect
 ```
+- 调用connect（阻塞或非阻塞），当连接成功建立时，描述符变为可写，当连接建立遇到错误时，描述符变为既可读又可写。
+- 不能根据描述符是否既可读又可写来判断非阻塞connect是否成功，因为在调用select前对端可能已经发送了数据，导致描述符变为可读。具体判断连接是否成功参考P353
+- 阻塞式connect的超时时间由内核决定（取决于不同内核实现，从75秒到数分钟）。可以通过非阻塞connect和对selec指定时间限制实现一个自定义的connect超时时间
+- 阻塞式connect可能被系统信号中断，这不代表连接失败。在这种情况下，为了获取connect的状态，可以使用select
 ##listen
 ```
 int listen (int sockfd,			//监听套接字描述符
 			int backlog);		//未完成连接队列和已完成连接队列总和的最大值
 ```
-```
-未完成连接队列：接收了SYN请求，但未完成三路握手（处于SYN_received状态）的套接字队列
-已完成连接队列：完成三路握手（处于的Established状态）的套接字队列
-```
+
+- 未完成连接队列：接收了SYN请求，但未完成三路握手（处于SYN_received状态）的套接字队列
+- 已完成连接队列：完成三路握手（处于的Established状态）的套接字队列
+
 ##accpet
 ```
 int accept (int sockfd,						//监听套接字描述符
@@ -100,7 +105,7 @@ ECONNABORTED							//三路握手完成后，accpet调用前，对端发送了RS
 EINTR                                   //阻塞模式下，被系统信号中断
 ```
 - accpet会从已完成连接队列中返回一个套接字给进程
-
+- 源自Berkeley的内核实现不会将ECONNABORTED返回给程序，对连接终止的套接字直接移除
 ##close##
 ```
 #include <unistd.h>
