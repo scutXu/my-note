@@ -1,5 +1,6 @@
 ####启动线程
 线程在构造函数执行后启动，std::thread接收任何callable的类型作为构造函数参数
+
 ```
 #include <thread>
 
@@ -21,6 +22,7 @@ int main() {
 }
 ```
 std::thread是Movable但Non-Copyable的
+
 ```
 #include <thread>
 
@@ -64,6 +66,7 @@ void func() {
 ```
 ####条件变量
 由于std::lock_guard在其生命周期过程中不允许释放锁，但是std::condition_variable::wait可能需要对锁进行释放，因此std::condition_variable应该结合std::unique_lock使用
+
 ```
 #include <mutex>
 #include <condition_variable>
@@ -94,3 +97,5 @@ void consumer() {
 	cv.notify_one();
 }
 ```
+
+

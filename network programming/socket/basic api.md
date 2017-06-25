@@ -106,6 +106,7 @@ EINTR                                   //阻塞模式下，被系统信号中�
 ```
 - accpet会从已完成连接队列中返回一个套接字给进程
 - 源自Berkeley的内核实现不会将ECONNABORTED返回给程序，对连接终止的套接字直接移除
+
 ##close##
 ```
 #include <unistd.h>
@@ -117,3 +118,5 @@ int close(int sockfd)
 -1
 ```
 - 默认情况下，close会马上返回，tcp负责发送写缓冲区中的剩余内容，并接着发送FIN
+
+

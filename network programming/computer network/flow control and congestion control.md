@@ -23,6 +23,7 @@ The condition in which congestion prevents or limits useful communication
 ##目的
 Avoid congestive collapse resulting from oversubscription
 ##实现方式
+###Slow start
 ##TCP实现
 
 

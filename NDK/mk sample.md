@@ -14,20 +14,30 @@
 	$(call import-module,android/native_app_glue)		#编译android_native_app_glue模块
 ###LOCAL_LDLIBS
 - 默认搜索路径为
-<!---->
-	<ndk_path>/platforms/android-xx/arch-xxx/usr/lib
+
+```
+<ndk_path>/platforms/android-xx/arch-xxx/usr/lib
+```
+	
 - 添加搜索路径
-<!---->
-	LOCAL_LDLIBS += -L?:?/?
-	LOCAL_LDLIBS += -L$(LOCAL_PATH)/../??	Android.mk所在路径的相对路径
+
+```
+LOCAL_LDLIBS += -L?:?/?
+LOCAL_LDLIBS += -L$(LOCAL_PATH)/../??	Android.mk所在路径的相对路径
+```
+	
 - 名字对应关系
-<!---->
-	-landroid				libandroid.so
-	-lOgreMainStatic		libOgreMainStatic.a
-	...
+
+```
+-landroid				libandroid.so
+-lOgreMainStatic		libOgreMainStatic.a
+...
+```
+
 ##Application.mk
 	APP_ABI := armeabi-v7a
 	APP_PLATFORM := android-9
 
 	#APP_STL := stlport_static
 	APP_STL := gnustl_static
+

@@ -1,3 +1,6 @@
+##get/set sockopt
+##fcntl
+##ioctl
 ```
 #include <sys/ioctl.h>
 int ioctl (int fd,
@@ -59,3 +62,4 @@ struct ifreq
 	} ifr_ifru;
 };
 ```
+

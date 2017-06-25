@@ -50,6 +50,7 @@ t			//等待时间t
 - 异常
 	+ 带外数据到达
 #pselect
+
 ```
 #include <sys/select.h>
 #include <signal.h>
@@ -69,6 +70,7 @@ int pselect(int maxfdp1,
 		    const sigset_t * sigmask);			//执行期间屏蔽的信号集
 ```
 pselect的实现可以理解为以下代码，且[ ]中的语句须是原子执行的。
+
 ```
 int pselect(sigmask)
 {
@@ -159,3 +161,5 @@ int epoll_pwait(int epfd,
 ```
 close
 ```
+
+
