@@ -55,6 +55,10 @@ EPROTONOSUPPORT
 int bind(int sockfd,	
 		 const struct sockaddr * myaddr,		//特定于某种协议的本地套接字地址
 		 socklen_t addrlen)					//地址的长度
+		 
+#retrun
+0
+-1
 ```
 
 - 对于TCP而言，可以指定一个端口号，或指定一个IP地址，或两者都指定，或两者都不指定
@@ -81,9 +85,14 @@ EINPROGRESS                     非阻塞connect
 - 阻塞式connect的超时时间由内核决定（取决于不同内核实现，从75秒到数分钟）。可以通过非阻塞connect和对selec指定时间限制实现一个自定义的connect超时时间
 - 阻塞式connect可能被系统信号中断，这不代表连接失败。在这种情况下，为了获取connect的状态，可以使用select
 ##listen
+
 ```
 int listen (int sockfd,			//监听套接字描述符
 			int backlog);		//未完成连接队列和已完成连接队列总和的最大值
+
+#return
+0
+-1
 ```
 
 - 未完成连接队列：接收了SYN请求，但未完成三路握手（处于SYN_received状态）的套接字队列

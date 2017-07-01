@@ -36,6 +36,7 @@ ssize_t write (int fd,
 			   
 #errno
 EPIPE								//套接字已经接收到RST
+EAGAIN/EWOULDBLOCK
 ```
 
 - 阻塞模式下，一般而言，write函数会阻塞直到发送缓冲区剩余空间足够容纳所有的请求写入数据。而在非阻塞模式下，若发送缓冲区剩余空间不够大，write函数会写入一部分数据，并返回写入数据的字节数。若发送缓冲区剩余空间为0,write函数会返回0，且errno会被设为EAGAIN或EWOULDBLOCK
