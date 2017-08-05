@@ -1,0 +1,35 @@
+1）相机模型矩阵转视图矩阵的方式，可以用glm::inverse
+
+
+
+2）opengl数学矩阵，opengl内存中需要为列存储,glm::mat4 [column][row]
+[i , j ,k , t]
+等价于
+[right, up , lookAt, t]
+
+3)相机矩阵求相机right,up,look
+相机view矩阵：
+相机model矩阵：取i,j,-k
+right,up,look求相机矩阵
+
+
+4)点乘求向量投影长度，求两向量夹角cos值
+
+5）透视投影矩阵
+2n/(r-l) , 0 , (r+l)/(r-l) , 0
+0 , 2n/(t-b) , (t+b)/(t-b) , 0
+0 , 0 , -(f+n)/(f-n) , -2nf/(f-n)
+0 , 0 , -1 ,0
+
+2n/(r-l) = cot(fovy / 2) / aspect
+2n/(t-b) = cot(fovy / 2)
+
+aspect = width / height
+
+6）正交矩阵的逆和转置相等
+
+7)[RT] = [T][R]，先旋转后平移
+
+8）求垂直于两个向量形成的平面的向量，可以用叉乘
+
+
