@@ -32,4 +32,8 @@ aspect = width / height
 
 8）求垂直于两个向量形成的平面的向量，可以用叉乘
 
+9）对normal做mv变换
+若mv不包含非一致性缩放：n = normalize(mat3(mv) * n) 或者 n = (mv * vec4(n,0)).xyz
+否则：n = (transpose(inverse(mv)) * vec4(n,0)).xyz
+
 

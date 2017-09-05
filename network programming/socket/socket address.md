@@ -124,6 +124,7 @@ l : long
 ```
 ##地址转换函数###
 - ipv4转换函数
+ 
 ```
 #include <arpa/inet.h>
 
@@ -140,6 +141,7 @@ int inet_aton (const char *cp,
 char *inet_ntoa (struct in_addr __in)
 ```
 - 通用地址转换函数
+
 ```
 #include <arpa/inet.h>
 
