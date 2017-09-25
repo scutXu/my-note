@@ -1,0 +1,19 @@
+1)c++函数返回（对象）数组(c++传数组给lua)：
+
+2)对象生命周期的管理：对于生命周期由lua管理的c++对象，触发gc时会调用delete。否则不会
+
+3）c++返回一个临时对象:绑定代码负责new一个新对象，临时对象复制到新对象，新对象指针传递给lua，新对象生命周期由lua管理
+c++返回一个对象引用：绑定代码将该对象的指针传递给lua，生命周期不由lua管理
+
+4）c++函数参数是（对象）数组（lua传数组给c++)
+getFloatPointer,
+void * getUserDataObjectPointer,
+getObjectPointer
+
+
+getObjectPointer会判断栈上的参数是table还是userdata，如果是table，会在c++创建一个对应大小的LuaArray，
+遍历table的每一项调用getUserDataObjectPointer。否则，直接调用getUserDataObjectPointer
+
+5）公有成员变量
+
+lua_newuserdata -> LuaObject 29.1
