@@ -1,0 +1,18 @@
+Bone
+
+
+Slot的作用是控制渲染顺序，将渲染顺序和Bone解耦开
+Bone和Slot的关系是1对1到多，同一个Bone上的多个Slot可以同时显示
+Slot和Attachment的关系是1对1到多，同一个Slot上的多个Attachment只能显示一个
+
+
+Attachment的类型有多种，包括
+Regin：矩形图片
+BoundingBox：碰撞区域
+Mesh
+LinkMesh：Mesh的引用
+Path：贝塞尔样条的组合，结合path constraint用于调整Bone的transform
+等
+
+
+Skin是Attachment的占位符
