@@ -10,10 +10,10 @@
 3)相机矩阵求相机right,up,look
 相机view矩阵：
 相机model矩阵：取i,j,-k
-right,up,look求相机矩阵
+right,up,look求相机矩阵：
 
 
-4)点乘求向量投影长度，求两向量夹角cos值
+4)点乘求向量投影长度，可用于求两向量夹角cos值
 
 5）透视投影矩阵
 2n/(r-l) , 0 , (r+l)/(r-l) , 0
@@ -36,6 +36,23 @@ aspect = width / height
 若mv不包含非一致性缩放：n = normalize(mat3(mv) * n) 或者 n = (mv * vec4(n,0)).xyz
 否则：n = (transpose(inverse(mv)) * vec4(n,0)).xyz
 
-9）骨骼蒙皮基本思路：
-顶点数据在模型坐标系，先变换到世界坐标系，再根据绑定姿势，乘逆矩阵到对应骨骼的局部坐标系。再根据动画姿势，乘回到世界坐标系。
-从模型空间变换到骨骼空间的矩阵称为boneOffsetMatrix
+9）骨骼蒙皮：
+基本思路
+顶点数据在模型局部坐标系，先变换到世界坐标系，再根据绑定姿势，乘逆矩阵到对应骨骼的局部坐标系。再根据动画姿势，乘回到世界坐标系。
+从模型空间直接变换到骨骼空间的矩阵称为boneOffsetMatrix，每对mesh和bone之间的映射关系对应一个boneOffsetMatrix，注意mesh和bone之间的关系可以是多对多
+
+Assimp的骨骼动画结构
+Assimp::aiBone实际应该理解为是一个Bone和mesh的映射关系，而不是骨骼，aiBone存储了boneOffsetMatrix
+真正代表一根骨骼的类是aiNode
+
+gameplay的骨骼动画结构
+Node->Model->Mesh->MeshSkin->Joint
+对应关系：1-1 ， 1-1， 1-1， *-*
+joint和MeshSkin的多对多关系说明了一根骨骼可以被多份mesh绑定
+joint代表一根骨骼，存储了骨骼的绑定姿势（Joint::_bindPose，注意这里存的是逆矩阵）和当前姿势（Node::_worldMatrix)
+MeshSkin代表一套骨架，同时也存储了模型绑定时的局部坐标系(MeshSkin::_bindShape)
+
+
+为了读取assimp到gameplay的对象，可以将MeshSkin::_bindShape设为单位矩阵，将Joint::_bindPose设为offsetMatrix，
+但这就意味着一根骨骼不能同时被多份mesh绑定
+worldMatrix * bindPose * bindShape * v = worldMatrix * offsetMatrix

@@ -1,0 +1,20 @@
+骨骼global transform的计算（Bone::_updateGlobalTransformMatrix）：
+global = origin + offset + animationPose
+origin是骨骼原始transform
+offset是程序可以动态设置的transform
+animationPose是动画计算得出的transform
+
+AnimationState的管理：
+1）AnimationState由Animation管理，外部调用者拿到的是引用对象。
+2）在每次Animation::_advanceTime中，_isFadeOutComplete为true的AnimationState对象会被returnToPool
+
+Event类型(IEventDispatcher::hasEvent为真时消息机制才会被启用)
+1）START
+2）LOOP_COMPLETE
+3）COMPLETE
+4）FADE_IN
+5）FADE_IN_COMPLETE
+6）FADE_OUT
+7）FADE_OUT_COMPLETE
+8）FRAME_EVENT
+9）SOUND_EVENT
