@@ -66,3 +66,9 @@ c2) If the node is marked as not necessary, skip it and do not iterate over its 
 为了读取assimp到gameplay的对象，可以将MeshSkin::_bindShape设为单位矩阵，将Joint::_bindPose设为offsetMatrix，
 但这就意味着一根骨骼不能同时被多份mesh绑定
 worldMatrix * bindPose * bindShape * v = worldMatrix * offsetMatrix
+
+10）
+和ogre不同，gameplay里的VertexAttributeBinding和Material是强关联关系，
+这意味着一份Material不能同时被多份mesh共享使用。但是，Material和Texture::Sampler，
+Material和Effect是弱关联关系，且Texture和Effect都会进行缓存，因此不会有多份数据源相同
+的texture或program都被载入的情况

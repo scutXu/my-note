@@ -1,0 +1,10 @@
+visual studio
+1）平台工具集：配置属性 常规
+2）目标计算机：链接器 高级 ／ 库管理器 常规
+3）配置：配置管理器
+
+xcode
+Architectures Architectures
+Architectures Base_SDK
+Architectures Valid_Architectures
+Deployment xx_Deployment_Target

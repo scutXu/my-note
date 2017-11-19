@@ -1,0 +1,9 @@
+sudo mv /usr/bin/java /usr/bin/java-1.6 修改目前的java替身名
+
+重启时按住command + R
+
+csrutil disable
+
+重启
+
+sudo ln -s '.../java' /usr/bin/java 在/usr/bin路径下创建新的java替身
