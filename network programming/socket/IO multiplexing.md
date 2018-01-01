@@ -117,7 +117,7 @@ typedef union epoll_data {
 } epoll_data_t;
 
 struct epoll_event {
-	uint32_t events;	 /* Epoll events */
+	uint32_t events;	 /* 监听的事件集 */
 	epoll_data_t data;	/* User data variable */
 };
 
@@ -125,12 +125,13 @@ struct epoll_event {
 EPOLLIN
 EPOLLOUT
 ...
+EPOLLET 设置为边缘触发（默认为条件触发）
 //参考P144 poll的events
 
 int epoll_ctl(int epfd, 
 			  int op, 
-			  int fd, 
-			  struct epoll_event *event);
+			  int fd, /* 事件集所监听的文件描述符对象 */
+			  struct epoll_event *event); /* 事件集 */
 
 #op			  
 EPOLL_CTL_ADD
@@ -148,8 +149,8 @@ EPOLL_CTL_DEL
 #include <sys/epoll.h>
 
 int epoll_wait(int epfd, 
-			   struct epoll_event *events,
-			   int maxevents,
+			   struct epoll_event *events, //返回所有就绪的事件集
+			   int maxevents, //events可以存储的最大事件集个数
 			   int timeout);
 			   
 int epoll_pwait(int epfd, 
@@ -161,6 +162,62 @@ int epoll_pwait(int epfd,
 ###关闭epoll实例
 ```
 close
+```
+
+###边缘触发（Edge Trigger）和条件触发（Level Trigger）
+Edge-triggered mode delivers events only when changes occur on the monitored file descriptor.
+
+###用法
+
+```
+#define MAX_EVENTS 10
+struct epoll_event ev, events[MAX_EVENTS];
+int listen_sock, conn_sock, nfds, epollfd;
+
+/* Code to set up listening socket, 'listen_sock',
+  (socket(), bind(), listen()) omitted */
+
+epollfd = epoll_create1(0);
+if (epollfd == -1) {
+   perror("epoll_create1");
+   exit(EXIT_FAILURE);
+}
+
+ev.events = EPOLLIN;
+ev.data.fd = listen_sock;
+if (epoll_ctl(epollfd, EPOLL_CTL_ADD, listen_sock, &ev) == -1) {
+   perror("epoll_ctl: listen_sock");
+   exit(EXIT_FAILURE);
+}
+
+for (;;) {
+   nfds = epoll_wait(epollfd, events, MAX_EVENTS, -1);
+   if (nfds == -1) {
+       perror("epoll_wait");
+       exit(EXIT_FAILURE);
+   }
+
+   for (n = 0; n < nfds; ++n) {
+       if (events[n].data.fd == listen_sock) {
+           conn_sock = accept(listen_sock,
+                              (struct sockaddr *) &addr, &addrlen);
+           if (conn_sock == -1) {
+               perror("accept");
+               exit(EXIT_FAILURE);
+           }
+           setnonblocking(conn_sock);
+           ev.events = EPOLLIN | EPOLLET;
+           ev.data.fd = conn_sock;
+           if (epoll_ctl(epollfd, EPOLL_CTL_ADD, conn_sock,
+                       &ev) == -1) {
+               perror("epoll_ctl: conn_sock");
+               exit(EXIT_FAILURE);
+           }
+       } else {
+           do_use_fd(events[n].data.fd);
+       }
+   }
+}
 ```
 
 

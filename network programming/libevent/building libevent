@@ -1,0 +1,7 @@
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew install cmake
+brew install openssl
+mkdir build && cd build
+cmake .. -DOPENSSL_ROOT_DIR=/usr/local/opt/openssl
+make
+make verfiy #(optional)
