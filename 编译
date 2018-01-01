@@ -8,3 +8,7 @@ Architectures Architectures
 Architectures Base_SDK
 Architectures Valid_Architectures
 Deployment xx_Deployment_Target
+
+.a  ->  .a   不包含
+.a  ->  .so  包含
+.so ->  .so  不包含

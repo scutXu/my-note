@@ -30,7 +30,11 @@ c2) If the node is marked as not necessary, skip it and do not iterate over its 
 worldMatrix * bindPose * bindShape * v = worldMatrix * offsetMatrix
 
 10）
-和ogre不同，gameplay里的VertexAttributeBinding和Material是强关联关系，
+和ogre不同，gameplay里的VertexAttributeBinding和Material(Pass)是强关联关系，
 这意味着一份Material不能同时被多份mesh共享使用。但是，Material和Texture::Sampler，
 Material和Effect是弱关联关系，且Texture和Effect都会进行缓存，因此不会有多份数据源相同
 的texture或program都被载入的情况
+
+
+gameplay::Mesh用于存储顶点数固定的网格，在创建时指定顶点数，后续无法更改，只能修改顶点的内容。
+当需要动态修改网格数量时，使用gameplay::MeshBatch
