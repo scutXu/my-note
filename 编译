@@ -9,6 +9,47 @@ Architectures Base_SDK
 Architectures Valid_Architectures
 Deployment xx_Deployment_Target
 
-.a  ->  .a   不包含
+.a  ->  .a   可以包，可以不包
 .a  ->  .so  包含
 .so ->  .so  不包含
+
+hpp中的代码会被编译到库文件中吗
+
+
+vs批量添加源文件：解决方案资源管理器 显示所有文件 右键文件夹 包括在项目中
+
+Android.mk .a依赖顺序（假设A依赖B）
+LOCAL_STATIC_LIBRARIES := libA libB
+
+
+依赖aar
+repositories {
+    flatDir {
+        dirs '路径名'
+    }
+}
+
+dependencies {
+	compile(name: 'aar包名', ext: 'aar')
+}
+
+
+
+编译ios .a
+xcodebuild -project gameplay.xcodeproj -target "gameplay-ios" -configuration "Release" -sdk iphonesimulator ARCHS="x86_64" ONLY_ACTIVE_ARCH=NO CONFIGURATION_BUILD_DIR="${SYMROOT}/Release-iphonesimulator" clean build
+xcodebuild -project gameplay.xcodeproj -target "gameplay-ios" -configuration "Release" -sdk iphoneos ARCHS="armv7 arm64" ONLY_ACTIVE_ARCH=NO CONFIGURATION_BUILD_DIR="${SYMROOT}/Release-iphoneos" clean build
+
+
+# Set the target folders and the final framework product.
+INSTALL_DIR=./xxlbuild
+DEVICE_DIR=${SYMROOT}/Release-iphoneos
+SIMULATOR_DIR=${SYMROOT}/Release-iphonesimulator
+
+# Create and renews the final product folder.
+mkdir -p "${INSTALL_DIR}"
+rm -rf ${INSTALL_DIR}/libgameplay
+
+# Use the Lipo Tool to merge both binary files (i386 + armv6/armv7) into one Universal final product.
+lipo -create "${DEVICE_DIR}/libgameplay.framework/libgameplay" "${SIMULATOR_DIR}/libgameplay.framework/libgameplay" -output "${INSTALL_DIR}/libgameplay"
+
+lipo -create "${DEVICE_DIR}/libgameplay.a" "${SIMULATOR_DIR}/libgameplay.a" -output "${INSTALL_DIR}/lib/libgameplay.a"

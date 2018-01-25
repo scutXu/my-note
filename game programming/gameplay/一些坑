@@ -1,0 +1,2 @@
+lua Camera内存泄漏问题，没有script create
+SpriteBatch::__spriteEffect 野指针问题（effect本身会有个cache）

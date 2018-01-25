@@ -18,3 +18,8 @@ Event类型(IEventDispatcher::hasEvent为真时消息机制才会被启用)
 7）FADE_OUT_COMPLETE
 8）FRAME_EVENT
 9）SOUND_EVENT
+
+skewX , skewY可以实现旋转／切变。
+skewX：图片X轴和坐标X轴的角度差
+skewY：图片Y轴和坐标Y轴的角度差
+当两者不相等时，图片存在切变变形

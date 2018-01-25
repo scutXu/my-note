@@ -13,6 +13,9 @@ Mesh
 LinkMesh：Mesh的引用
 Path：贝塞尔样条的组合，结合path constraint用于调整Bone的transform
 等
+Point:
+Clipping:
 
 
-Skin是Attachment的占位符
+Skin是一份map，存储了slot和attachment的映射关系。
+1份SkeletonData至少存储了一份skin，Skeleton在某一时刻只会选择一份Skin

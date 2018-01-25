@@ -6,7 +6,7 @@
 [right, up , lookAt, t]
 
 3)相机矩阵求相机right,up,look
-相机view矩阵：
+相机view矩阵：先通过求逆得到相机model矩阵
 相机model矩阵：取i,j,-k
 right,up,look求相机矩阵：
 

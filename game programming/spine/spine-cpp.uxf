@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>7</zoom_level>
+  <zoom_level>5</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>455</x>
-      <y>308</y>
-      <w>70</w>
-      <h>21</h>
+      <x>530</x>
+      <y>415</y>
+      <w>50</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>Animation</panel_attributes>
     <additional_attributes/>
@@ -15,10 +15,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>329</x>
-      <y>378</y>
-      <w>70</w>
-      <h>21</h>
+      <x>405</x>
+      <y>300</y>
+      <w>50</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>Skeleton</panel_attributes>
     <additional_attributes/>
@@ -26,10 +26,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>455</x>
-      <y>378</y>
-      <w>70</w>
-      <h>21</h>
+      <x>530</x>
+      <y>465</y>
+      <w>50</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>Timeline</panel_attributes>
     <additional_attributes/>
@@ -37,10 +37,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>567</x>
-      <y>378</y>
-      <w>84</w>
-      <h>21</h>
+      <x>600</x>
+      <y>465</y>
+      <w>60</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>CurveTimeLine</panel_attributes>
     <additional_attributes/>
@@ -48,10 +48,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>672</x>
-      <y>301</y>
-      <w>84</w>
-      <h>35</h>
+      <x>700</x>
+      <y>410</y>
+      <w>60</w>
+      <h>25</h>
     </coordinates>
     <panel_attributes>RotateTimeline
 --
@@ -61,10 +61,10 @@ boneIndex : int</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>672</x>
-      <y>350</y>
-      <w>84</w>
-      <h>35</h>
+      <x>700</x>
+      <y>460</y>
+      <w>70</w>
+      <h>25</h>
     </coordinates>
     <panel_attributes>TranslateTimeline
 --
@@ -74,10 +74,10 @@ boneIndex : int</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>672</x>
-      <y>476</y>
-      <w>84</w>
-      <h>21</h>
+      <x>700</x>
+      <y>560</y>
+      <w>60</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>...</panel_attributes>
     <additional_attributes/>
@@ -85,10 +85,10 @@ boneIndex : int</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>805</x>
-      <y>294</y>
-      <w>105</w>
-      <h>42</h>
+      <x>825</x>
+      <y>410</y>
+      <w>85</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>RotateTimeline::Frame
 --
@@ -99,10 +99,10 @@ angle : float</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>805</x>
-      <y>364</y>
-      <w>119</w>
-      <h>42</h>
+      <x>825</x>
+      <y>460</y>
+      <w>95</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>TranslateTimeline::Frame
 --
@@ -113,10 +113,10 @@ translation : Vector</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>672</x>
-      <y>413</y>
-      <w>98</w>
-      <h>35</h>
+      <x>700</x>
+      <y>510</y>
+      <w>80</w>
+      <h>25</h>
     </coordinates>
     <panel_attributes>AttachmentTimeline
 --
@@ -126,10 +126,10 @@ slotIndex : int</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>805</x>
-      <y>427</y>
-      <w>133</w>
-      <h>42</h>
+      <x>825</x>
+      <y>510</y>
+      <w>100</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>AttachmentTimeline::Frame
 --
@@ -140,10 +140,10 @@ attachmentName : string</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>238</x>
-      <y>301</y>
-      <w>70</w>
-      <h>21</h>
+      <x>305</x>
+      <y>300</y>
+      <w>50</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>Bone</panel_attributes>
     <additional_attributes/>
@@ -151,10 +151,10 @@ attachmentName : string</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>483</x>
-      <y>322</y>
-      <w>21</w>
-      <h>70</h>
+      <x>550</x>
+      <y>425</y>
+      <w>15</w>
+      <h>50</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=*
@@ -164,10 +164,10 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>238</x>
-      <y>343</y>
-      <w>70</w>
-      <h>21</h>
+      <x>305</x>
+      <y>345</y>
+      <w>50</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>Slot</panel_attributes>
     <additional_attributes/>
@@ -175,10 +175,10 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>238</x>
-      <y>385</y>
-      <w>70</w>
-      <h>21</h>
+      <x>305</x>
+      <y>260</y>
+      <w>50</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>Skin</panel_attributes>
     <additional_attributes/>
@@ -186,21 +186,25 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>238</x>
-      <y>448</y>
-      <w>70</w>
-      <h>21</h>
+      <x>150</x>
+      <y>255</y>
+      <w>90</w>
+      <h>45</h>
     </coordinates>
-    <panel_attributes>SkinEntry</panel_attributes>
+    <panel_attributes>SkinEntry
+--
+slotIndex:int
+name:string
+attachment:Attachment*</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>140</x>
-      <y>441</y>
-      <w>70</w>
-      <h>21</h>
+      <x>200</x>
+      <y>345</y>
+      <w>50</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>Attachment</panel_attributes>
     <additional_attributes/>
@@ -208,21 +212,22 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>28</x>
-      <y>490</y>
-      <w>91</w>
-      <h>21</h>
+      <x>110</x>
+      <y>400</y>
+      <w>70</w>
+      <h>15</h>
     </coordinates>
-    <panel_attributes>RegionAttachment</panel_attributes>
+    <panel_attributes>RegionAttachment
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>105</x>
-      <y>560</y>
-      <w>119</w>
-      <h>21</h>
+      <x>95</x>
+      <y>455</y>
+      <w>95</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>BoundingBoxAttachment</panel_attributes>
     <additional_attributes/>
@@ -230,10 +235,10 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>238</x>
-      <y>560</y>
-      <w>98</w>
-      <h>21</h>
+      <x>195</x>
+      <y>455</y>
+      <w>70</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>MeshAttachment</panel_attributes>
     <additional_attributes/>
@@ -241,10 +246,10 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>217</x>
-      <y>490</y>
-      <w>91</w>
-      <h>21</h>
+      <x>265</x>
+      <y>400</y>
+      <w>70</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>VertexAttachment</panel_attributes>
     <additional_attributes/>
@@ -252,10 +257,10 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>350</x>
-      <y>560</y>
-      <w>84</w>
-      <h>21</h>
+      <x>270</x>
+      <y>455</y>
+      <w>60</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>PathAttachment</panel_attributes>
     <additional_attributes/>
@@ -263,56 +268,58 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>518</x>
-      <y>378</y>
-      <w>63</w>
-      <h>21</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>168</x>
-      <y>455</y>
-      <w>21</w>
-      <h>35</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;30.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>266</x>
-      <y>399</y>
+      <x>575</x>
+      <y>465</y>
       <w>35</w>
-      <h>63</h>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>220</x>
+      <y>355</y>
+      <w>15</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>235</x>
+      <y>260</y>
+      <w>80</w>
+      <h>20</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1..*
 m2=1</panel_attributes>
-    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;140.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>168</x>
-      <y>343</y>
-      <w>84</w>
-      <h>112</h>
+      <x>245</x>
+      <y>345</y>
+      <w>70</w>
+      <h>20</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;140.0;100.0;10.0</additional_attributes>
+    <panel_attributes>lt=&lt;-
+m1=0...1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>455</x>
-      <y>238</y>
-      <w>70</w>
-      <h>21</h>
+      <x>530</x>
+      <y>365</y>
+      <w>50</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>TrackEntry</panel_attributes>
     <additional_attributes/>
@@ -320,10 +327,10 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>483</x>
-      <y>252</y>
-      <w>21</w>
-      <h>70</h>
+      <x>550</x>
+      <y>375</y>
+      <w>15</w>
+      <h>50</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1
@@ -333,10 +340,10 @@ m2=*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>455</x>
-      <y>161</y>
-      <w>77</w>
-      <h>21</h>
+      <x>525</x>
+      <y>300</y>
+      <w>60</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>AnimationState</panel_attributes>
     <additional_attributes/>
@@ -344,64 +351,320 @@ m2=*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>483</x>
-      <y>175</y>
-      <w>35</w>
-      <h>77</h>
+      <x>550</x>
+      <y>310</y>
+      <w>25</w>
+      <h>65</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1...*
 m2=1</panel_attributes>
-    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>714</x>
-      <y>56</y>
-      <w>126</w>
-      <h>77</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes/>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>483</x>
-      <y>63</y>
-      <w>245</w>
-      <h>161</h>
-    </coordinates>
-    <panel_attributes>lt=..
-</panel_attributes>
-    <additional_attributes>10.0;210.0;330.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>357</x>
-      <y>161</y>
-      <w>112</w>
-      <h>231</h>
+      <x>450</x>
+      <y>295</y>
+      <w>85</w>
+      <h>25</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 m1=1
 m2=1
 apply</panel_attributes>
-    <additional_attributes>10.0;310.0;140.0;10.0</additional_attributes>
+    <additional_attributes>10.0;20.0;150.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>532</x>
-      <y>266</y>
-      <w>119</w>
-      <h>49</h>
+      <x>605</x>
+      <y>360</y>
+      <w>70</w>
+      <h>25</h>
     </coordinates>
     <panel_attributes>TrackEntry是带状
-态的实例对象。Animation
-是不带状态的数据对象</panel_attributes>
+态的Animation</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>260</y>
+      <w>45</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0;70.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>300</y>
+      <w>45</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;100.0;70.0;100.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>300</y>
+      <w>65</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>75</x>
+      <y>345</y>
+      <w>70</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>AttachmentLoader</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>140</x>
+      <y>345</y>
+      <w>70</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>385</x>
+      <y>395</y>
+      <w>90</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>存储一些用顶点表示的信息</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>330</x>
+      <y>395</y>
+      <w>65</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=..
+</panel_attributes>
+    <additional_attributes>10.0;20.0;110.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>5</x>
+      <y>395</y>
+      <w>90</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>存储一些用区域表示的信息</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>90</x>
+      <y>395</y>
+      <w>30</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=..
+</panel_attributes>
+    <additional_attributes>10.0;20.0;40.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>335</x>
+      <y>455</y>
+      <w>75</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>ClippingAttachment</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>140</x>
+      <y>410</y>
+      <w>15</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>295</x>
+      <y>410</y>
+      <w>15</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>225</x>
+      <y>425</y>
+      <w>85</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>150.0;10.0;10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>295</x>
+      <y>425</y>
+      <w>15</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>295</x>
+      <y>425</y>
+      <w>85</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;150.0;10.0;150.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>140</x>
+      <y>370</y>
+      <w>95</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>170.0;10.0;10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>220</x>
+      <y>370</y>
+      <w>90</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;160.0;10.0;160.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>575</x>
+      <y>360</y>
+      <w>40</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=..
+</panel_attributes>
+    <additional_attributes>10.0;20.0;60.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>655</x>
+      <y>465</y>
+      <w>55</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>670</x>
+      <y>415</y>
+      <w>40</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>670</x>
+      <y>465</y>
+      <w>40</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0;60.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>670</x>
+      <y>465</y>
+      <w>40</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;200.0;60.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>755</x>
+      <y>415</y>
+      <w>80</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;140.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>765</x>
+      <y>465</y>
+      <w>70</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>775</x>
+      <y>515</y>
+      <w>60</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
   </element>
 </diagram>

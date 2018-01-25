@@ -13,19 +13,28 @@ lua传入的参数可能是lightuserdata或者table，
 5）getObjectPointer
 lua传入的参数可能是userdata或者table
 
-）公有成员变量
+6）公有成员变量
 x = p:x()
 p:x(0)
 
-)函数重载（个数相同，类型都是userData）
-
-）指针类型转换
-显式的to函数
+7)函数重载（个数相同，类型都是userData）
 
 
-）
+
+8）
 //定义类
 1）创建一个table（用作metatable）
 2）通过注册的方式为table添加能映射到c++的方法
 //创建对象
 创建一个userData，设置metatable
+
+
+9)lua对象转C++指针
+ScriptUtil::getObjectPointer
+ScriptUtil::getUserDataObjectPointer
+lua_rawequal
+显式的to函数 or 参数匹配自动隐式转换 - 根据map中存储的继承关系，找到存储映射函数
+
+
+10)C++继承关系如何表现到lua？
+
