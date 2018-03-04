@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>															<!-- 头部，所有头部元素的容器。绝大多数头部中的内容都不会作为内容显示给读者 -->
-	<title>This is title</title>								<!-- 文档标题，在浏览器窗体的状态栏或标题栏中显示，不会在页面中显示 -->
-	<meta charset="utf-8">										<!-- 元信息。charset属性指定字符编码 -->
+<head>																		<!-- 头部，所有头部元素的容器。绝大多数头部中的内容都不会作为内容显示给读者 -->
+	<title>This is title</title>											<!-- 文档标题，在浏览器窗体的状态栏或标题栏中显示，不会在页面中显示 -->
+	<meta charset="utf-8">													<!-- 元信息。charset属性指定字符编码 -->
 </head>
-<body style="background-color:powderblue;">						<!-- 主体，包含文档的所有内容。内联样式属性指定了背景色-->
-	<h1 style="font-size:20px;">This is heading 1</h1>			<!-- 标题，不要仅仅为了产生粗体文体而使用。内联样式属性指定了字体大小 -->
-	<p style="color:red;">This is paragraph</p>					<!-- 段落。内联样式属性指定了字体颜色 -->
-	<a href="https://www.google.com">This is link</a>			<!-- 链接 -->
-	<div>														<!-- 区块，经常配合css使用，用于对网页布局 -->
-		
+<body style="background-color:powderblue;">									<!-- 主体，包含文档的所有内容。内联样式属性指定了背景色-->
+	<h1 style="font-size:20px;">This is heading 1</h1>						<!-- 标题，不要仅仅为了产生粗体文体而使用。内联样式属性指定了字体大小 -->
+	<p style="color:red;">This is paragraph</p>								<!-- 段落。内联样式属性指定了字体颜色 -->
+	<a href="https://www.google.com">This is link</a>						<!-- 链接 -->
+	<div>																	<!-- 区块，经常配合css使用，用于对网页布局 -->
+		<form action="ttp://www.baidu.com" method="POST">					<!-- 表单，包含表单元素的区域，数据提交的单元 -->
+			<fieldset>														<!-- 定义一组相关的表单元素，并使用外框包含起来 -->
+				<legend>personal info</legend>								<!-- fieldset的标题 -->
+				user name:<input type="text" name="username">				<!-- 文本输入 -->
+				<br>														<!-- 换行 -->
+				<input type="radio" name="sex" value="male" checked> male	<!-- 单选框 -->
+				<input type="radio" name="sex" value="femal"> femal
+				<br>
+				<input type="submit" name="submit">							<!-- 提交按钮，用于提交表单数据到服务器，注意和button区分 -->
+			</fieldset>
+		</form>
 	</div>
 </body>
 </html>

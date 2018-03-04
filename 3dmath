@@ -42,3 +42,7 @@ aspect = width / height
 	ndc的z值被换算到3D空间时不是线性的计算，且非线性的程度不是一般的高，可以先指定一个合适3D空间的深度Z，
 	透视投影求到ndc空间的z，在unproject时使用。
 参考：glm::unProject
+
+11)
+向量求角度：
+atan支持1，4象限的角度（-90～90），atan2支持任意角度
