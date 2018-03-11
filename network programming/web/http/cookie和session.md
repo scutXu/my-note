@@ -24,3 +24,27 @@ Content-length: 1903
 - 取决于服务端的设计，session可以存储在内存或硬盘中
 
 
+###实例
+
+
+```
+<form action="/authenticate", method="post">
+	...
+</form>
+```
+
+```
+func authenticate(writer http.ResponseWriter, request *http.Request) {
+	...
+	cookie := http.Cookie{
+		Name:      "id", 
+		Value:     id,
+		HttpOnly:  true,
+	}
+	http.SetCookie(writer, &cookie)	//往响应头部写入cookie
+	http.Redirect(writer, request, "/", 302) //往响应头部写入location
+}
+
+mux := http.NewServeMux()
+mux.HandleFunc("/authenticate", authenticate)
+```
