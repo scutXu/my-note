@@ -1,0 +1,13 @@
+Type				Copy behaviour			Compare behaviour
+
+array				Deep copy				Comparable if two array have same length
+											and their element type are comparable.
+											Equal if all corresponding elements are equal.
+
+slice				Shallow copy			only comparable with nil
+
+map					Shallow copy			only comparable with nil
+
+struct				Deep copy
+
+channel				Shallow copy
