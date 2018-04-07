@@ -1,0 +1,167 @@
+安装webpack
+
+```
+mkdir webpack-demo && cd webpack-demo
+
+//创建package.json，-y表示不询问，用默认参数填充信息
+npm init -y
+
+//在本地文件夹安装webpack，并自动修改package.json，将webpack加入开发依赖包
+npm install webpack webpack-cli --save-dev
+
+-S, --save: Package will appear in your dependencies.
+-D, --save-dev: Package will appear in your devDependencies.
+-O, --save-optional: Package will appear in your optionalDependencies.
+```
+
+默认创建的package.json
+
+```
+{
+  "name": "webpack-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+```
+
+增加相应的文件及文件夹
+
+```
+  webpack-demo
+  |- package.json
++ |- index.html
++ |- /src
++   |- index.js
+```
+
+修改index.js的内容
+
+```
+function component() {
+  var element = document.createElement('div');
+
+  // Lodash, currently included via a script, is required for this line to work
+  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+
+  return element;
+}
+
+document.body.appendChild(component());
+```
+
+修改index.html的内容。由于index.js中引用到了Lodash库，因此需要加载Lodash的脚本
+
+```
+<!doctype html>
+<html>
+  <head>
+    <title>Getting Started</title>
+    <script src="https://unpkg.com/lodash@4.16.6"></script>
+  </head>
+  <body>
+    <script src="./src/index.js"></script>
+  </body>
+</html>
+```
+修改目录结构，创建发布用的文件夹dist并将index.html移动到其中
+
+```
+  webpack-demo
+  |- package.json
++ |- /dist
++   |- index.html
+- |- index.html
+  |- /src
+    |- index.js
+```
+安装lodash库并加到package.json的dependencies中
+
+```
+npm install --save lodash
+```
+修改index.js，显式依赖lodash模块
+
+```
++ import _ from 'lodash';
++
+  function component() {
+    var element = document.createElement('div');
+
+-   // Lodash, currently included via a script, is required for this line to work
++   // Lodash, now imported by this script
+    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+
+    return element;
+  }
+
+  document.body.appendChild(component());
+```
+lodash库不再通过html文件加载脚本来引用，而是通过webpack合并到最终输出的js文件中
+。因此删除index.html对应部分。注意此时bundle.js还未生成
+
+```
+  <!doctype html>
+  <html>
+   <head>
+     <title>Getting Started</title>
+-    <script src="https://unpkg.com/lodash@4.16.6"></script>
+   </head>
+   <body>
+-    <script src="./src/index.js"></script>
++    <script src="bundle.js"></script>
+   </body>
+  </html>
+```
+
+在根目录增加webpack.config.js
+
+```
+const path = require('path');
+
+module.exports = {
+  entry: './src/index.js',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist')
+  }
+};
+```
+
+生成bundle.js
+
+```
+npx webpack --config webpack.config.js
+```
+也可以利用npm script功能让bundle.js的生成更自动化
+
+```
+  {
+    "name": "webpack-demo",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
++     "build": "webpack"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "webpack": "^4.0.1",
+      "webpack-cli": "^2.0.9",
+      "lodash": "^4.17.5"
+    }
+  }
+```
+```
+npm run build
+```
+package.json和npm的作用是管理项目代码的包依赖关系。webpack作用是将所有依赖到的模块和项目代码打包为一份文件

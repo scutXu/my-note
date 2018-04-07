@@ -8,6 +8,7 @@ slice				Shallow copy			only comparable with nil
 
 map					Shallow copy			only comparable with nil
 
-struct				Deep copy
+struct				Deep copy				if all the fields of a struct are comparable,
+											the struct itself is comparable
 
 channel				Shallow copy
