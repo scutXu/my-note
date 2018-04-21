@@ -1,0 +1,55 @@
+文件加载
+
+1）加载ImageFile.js文件
+
+2）注册图片文件加载函数到FileTypesManager
+FileTypesManager.register('image', function (key, url, xhrSettings)
+{
+	/*
+	 * this是LoaderPlugin类型
+	 * File会存在LoaderPlugin维护的一个CustomSet
+	 */
+	this.addFile(new ImageFile(...));
+	return this;
+});
+
+
+3）从FileTypesManager安装加载函数到LoaderPlugin
+install: function (loader)
+{
+    for (var key in types)
+    {
+    	//直接将方法赋给LoaderPlugin的实例对象
+        loader[key] = types[key];
+    }
+},
+
+FileTypesManager.install(this);
+
+4）通过LoaderPlugin对象调用加载方法
+this.load.image('logo', 'assets/logo.png');
+
+
+
+
+
+对象创建
+
+1）加载ImageFactory.js
+2）注册图片对象创建函数
+GameObjectFactory.register('image', function (x, y, key, frame)
+{
+	/*
+	 * this是GameObjectFactory
+	 * this.displayList是对this.scene.sys.displayList的引用
+	 */
+    return this.displayList.add(new Image(this.scene, x, y, key, frame));
+});
+
+GameObjectFactory.register = function (factoryType, factoryFunction)
+{
+	//直接添加到GameObjectFactory的原型
+    GameObjectFactory.prototype[factoryType] = factoryFunction;
+};
+3）创建对象并添加到场景中
+this.add.image(400, 150, 'logo');

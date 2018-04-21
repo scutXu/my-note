@@ -1,0 +1,6 @@
+Scene::render
+System::render
+CameraManager::render
+WebGLRenderer::render
+Image::renderWebGL
+TextureTintPipeline::batchSprite
