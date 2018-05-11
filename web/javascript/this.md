@@ -45,14 +45,12 @@ function add(c, d) {
 
 var o = {a: 1, b: 3};
 
-// The first parameter is the object to use as
-// 'this', subsequent parameters are passed as 
-// arguments in the function call
 add.call(o, 5, 7); // 16
 
-// The first parameter is the object to use as
-// 'this', the second is an array whose
-// members are used as the arguments in the function call
 add.apply(o, [10, 20]); // 34
 ```
-对函数调用bind，会返回一个新的函数，该函数不论如何被调用，this对象都指向bind方法的参数。bind还可以用于指定固定参数，类似placeholder。（bind的作用和std::bind基本一致）
+对函数调用bind，会返回一个新的函数，该函数不论如何被调用，this对象都指向bind方法的参数。bind还可以用于指定固定参数，类似placeholder。（bind的作用和std::bind基本一致
+
+```
+
+```
