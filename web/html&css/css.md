@@ -25,7 +25,7 @@ h2, p {color: gray;}
 ```
 
 ###类选择器
-应用到所有class属性为"myclass"的元素
+结合通配选择器，应用到所有class属性为"myclass"的元素
 
 ```
 <p class="myclass">this is paragraph</p>
@@ -33,7 +33,7 @@ h2, p {color: gray;}
 ```
 *.myclass {color: gray;}
 ```
-应用到所有class属性为"myclass"的段落
+结合元素选择器，应用到所有class属性为"myclass"的段落
 
 ```
 <p class="myclass">this is paragraph</p>
@@ -46,6 +46,7 @@ id选择器class选择器用法相同。区别在于元素的id是唯一的
 ### 属性选择器
 ### 后代选择器（派生选择器/上下文选择器）
 应用到作为h1元素后代的任何em元素
+
 ```
 <h1>this is heading<em>this is emphasized text</em></h1>
 ```
