@@ -57,3 +57,15 @@ https://stackoverflow.com/questions/2145571/java-calculating-area-of-a-triangle
 13)随机求三角形内一点（均匀分布）
 P = (1 - sqrt(r1)) * A + (sqrt(r1) * (1 - r2)) * B + (sqrt(r1) * r2) * C
 https://stackoverflow.com/questions/19654251/random-point-inside-triangle-inside-java
+
+14）点相对向量的左右判断
+Try this code which makes use of a cross product:
+
+public bool isLeft(Point a, Point b, Point c){
+     return ((b.X - a.X)*(c.Y - a.Y) - (b.Y - a.Y)*(c.X - a.X)) > 0;
+}
+Where a = line point 1; b = line point 2; c = point to check against.
+
+If the formula is equal to 0, the points are colinear.
+
+If the line is horizontal, then this returns true if the point is above the line.
