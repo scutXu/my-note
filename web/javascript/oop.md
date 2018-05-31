@@ -11,7 +11,7 @@ o.__proto__ = MyClass.prototype;
 MyClass.call(o);
 ```
 ### prototype和__proto__
-prototype是Function类型的属性，\_\_proto__是Object类型的属性。
+prototype是Function类型的属性，\_\_proto__是Object类型的属性
 ![](prototype.png)
 ##工厂模式
 
@@ -27,7 +27,7 @@ function createPerson(name, age, job) {
 	return o;
 }
 ```
-- 缺点：没有解决对象识别的问题
+缺点：没有解决对象识别的问题
 
 ##构造函数模式
 
@@ -45,7 +45,7 @@ var person = new Person("Nicholas", 29, "Software Engineer")
 
 console.log(person instanceof Person) //true
 ```
-- 缺点：每个方法都要在每个实例上重新创建一遍
+缺点：每个方法都要在每个实例上重新创建一遍
 
 ##原型模式 + 构造函数模式
 
@@ -60,5 +60,13 @@ function Person(name, age ,job) {
 Person.prototype.sayName = function() {
 	
 }
+
+//一些oop工具库通常使用Object.defineProperty，而非直接定义属性
+Object.defineProperty(Persion.prototype, "sayName", {
+	value: function() {},
+	enumerable: false,
+	writable: true,
+	configurable: true
+});
 ```
-- 类似lua的元表
+原理类似lua的元表
