@@ -21,6 +21,9 @@ let reflect = value => value;
 
 //没有参数时不可省略括号
 let getName = () => "Nicholas";
+
+//返回对象字面量时需要用括号包裹起来，避免和函数块混淆
+let getTempItem = id => ({id: id, name: "Temp" });
 ```
 ###没有this绑定
 没有this绑定应该理解为在创建函数时就固定了this绑定，能够用于代替bind的使用
