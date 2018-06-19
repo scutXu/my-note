@@ -19,8 +19,9 @@ let sum = (num1, num2) => {
 //参数只有1个时可以省略括号
 let reflect = value => value;
 
-//没有参数时不可省略括号
+//没有参数时需要有括号或下划线
 let getName = () => "Nicholas";
+let getName = _ => "Nicholas";
 
 //返回对象字面量时需要用括号包裹起来，避免和函数块混淆
 let getTempItem = id => ({id: id, name: "Temp" });
