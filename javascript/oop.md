@@ -1,3 +1,4 @@
+#ES 5
 ### 关于构造函数
 构造函数只是一个普通的函数，当使用new操作符调用一个函数时，这个函数就被认为是构造函数。下面两段代码的功能是相同的
 
@@ -70,3 +71,27 @@ Object.defineProperty(Persion.prototype, "sayName", {
 });
 ```
 原理类似lua的元表
+
+#ES 6
+
+```
+class MyClass extends BaseClass {
+	constructor(param) {
+		//必须先初始化基类
+		super(param);
+	
+		//定义和初始化成员变量
+		this.param = param;
+	}
+	
+	//成员函数
+	myFunc() {
+		
+	}
+	
+	//静态函数
+	static create(param) {
+		return new MyClass(param);
+	}
+}
+```
