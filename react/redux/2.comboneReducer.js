@@ -28,3 +28,12 @@ const reducer = combineReducers({
 	age,
 	friends
 })
+
+//combineReducer等价于
+function reducer(state = {}, action) {
+	return {
+		name: nameReducer(state.name, action),
+		age: ageReducer(state.age, action),
+		friends: friendReducer(state.friends, action)
+	};
+}

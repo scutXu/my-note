@@ -24,7 +24,6 @@ function listener() {
 store.subscribe(listener);
 
 
-
 let setNameAction = {
 	type: 'SET_NAME',
 	name: "joe"

@@ -1,0 +1,11 @@
+dip	Density Independent Pixels
+dp	Density-independent Pixels
+ppi	Pixels Per Inch
+px 	Pixels
+sp	Scale-independent Pixels
+dpi Dot Per Inch
+
+
+dp = dip
+dpi = ppi
+1 dp = 1 inch / 160 				一英寸固定160dp
