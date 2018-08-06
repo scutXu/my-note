@@ -24,28 +24,6 @@ vec3 blinnPhong(float Ks, vec3 specular, vec3 lightDirection, vec3 viewDirection
 	return Ks * specular * pow(max(dot(- halfDirection, vertexNormal), 0.0), shininess);
 }
 ```
-###Physical
+以上代码忽略了多光源的情况，实际上计算公式应该为
 
-#Map
-###BumpMap 凹凸贴图
-```
-uniform mat4 uvTransform;
-varying vec2 vUv;
-
-```
-###NormalMap 法线贴图
-###SpcularMap
-###AlphaMap
-###EmissiveMap
-###RoughenessMap
-###MetalnessMap
-###LightMap
-```
-attribute vec2 uv2;
-varying vec2 vUv2;
-```
-###AoMap
-```
-attribute vec2 uv2;
-varying vec2 vUv2;
-```
+**color = ambient + ∑(diffuse + specular)**
