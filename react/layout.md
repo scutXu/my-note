@@ -3,7 +3,7 @@
 ##尺寸与自适应
 layout size可能为以下几种值：
 
-- AUTO（默认）：根据内容自动计算，内容可能是文字，图片，或是子元素
+- AUTO（默认）：根据内容自动计算，内容可能是文字，图片，或是子元素。如果父元素开启了flex，且alignItems为stretch，会根据父元素的尺寸拉伸
 - PIXELS：DIP
 - PERCENTAGE：相对于父元素的百分比
 

@@ -6,7 +6,7 @@ normal map的每一个像素值是一个处于切空间（tangent space）的法
 3. 在逐像素计算步骤中，根据uv取出normal map中的法线值，并转换到视图空间
 4. 使用该法线向量替代顶点法线进行光照计算
 
-normal map实现的难点主要在于tangent和binormal的计算，通常建模软件会负责此任务。
+normal map实现的难点主要在于tangent和binormal的计算
 ##AO Map
 ##Light Map
 ##Shadow Map

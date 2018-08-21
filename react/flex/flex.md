@@ -17,13 +17,13 @@
 ###flexDirection
 项目排列（主轴）方向
 
-- row：水平，从左到右（默认）
+- row：水平，从左到右（CSS默认）
 - row-reverse：水平，从右到左
-- column：垂直，从上到下
+- column：垂直，从上到下（React Native默认）
 - column：垂直，从下到上
 
 ###flexWrap
-项目换行（交叉轴）方向
+项目换行（次轴/交叉轴）方向
 
 - nowrap：不换行，项目强制挤压到同一行内（默认）
 - wrap：换行，交叉轴从上到下或从左到右
@@ -35,7 +35,7 @@
 ###justifyContent
 项目在主轴上的对齐方式
 
-- flex-start：对齐main-start，紧密排列（默认）
+- flex-start：对齐main-start，紧密排列
 - flex-end：对齐main-end，紧密排列
 - center：居中对齐，紧密排列
 - space-between：两端对齐，项目间间隔相等，项目和边框无间隔
@@ -46,9 +46,9 @@
 
 - flex-start：
 - flex-end：
-- center：
+- center：居中对齐
 - baseline：项目的第一行文字的基线对齐
-- stretch：如果项目未设置高度或设为auto，将拉伸直到占满整个容器的高度（默认）
+- stretch：如果项目未设置相对于次轴方向的尺寸的或设为auto，将拉伸直到占满整个次轴的长度（默认）
 
 ###alignContent
 多根轴线（换行）时，项目在交叉轴上的对齐方式
