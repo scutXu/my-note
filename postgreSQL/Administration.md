@@ -1,0 +1,7 @@
+新版本的PosegreSQL统一使用术语roles和group roles来描述users和groups，users和groups分别等价于具有login权限的roles以及group roles
+
+不具备登陆权限的roles只用于管理数据库权限
+
+创建database cluster时默认会同时创建一个role，该role的名字和系统用户名相同，密码随机。若在pg_hba.conf将授权方式设为indent, peer或trust，则在本地login该role时不需要输入密码
+
+group roles的作用是方便对一组role进行权限管理，因此通常不具备login权限
