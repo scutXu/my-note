@@ -1,0 +1,5 @@
+viewController不能控制每一个view的生命周期
+android的每个View都有属于自己的生命周期回调，但ios不是
+viewController控制的是storyboard rootView的生命周期
+UIView didMoveToWindow willMoveToWindow
+将资源申请/释放的方法导出到js，用component的生命周期回调进行管理

@@ -5,3 +5,14 @@
 创建database cluster时默认会同时创建一个role，该role的名字和系统用户名相同，密码随机。若在pg_hba.conf将授权方式设为indent, peer或trust，则在本地login该role时不需要输入密码
 
 group roles的作用是方便对一组role进行权限管理，因此通常不具备login权限
+
+database cluster包含两个模板数据库，template0和template1。创建新的数据库时默认以template1作为模板，template0作为一种数据备份，不应该被修改，
+
+schema是对database进行逻辑分组的手段，同一个databse中的多个table可以重名，前提是存放在不同的schema中。
+
+使用一个database多个schema，还是多个database是一个需要注意的问题。database具有多个属性是schema不具备的，如文件编码方式，最大访问连接数，更高精度的权限控制。schema的作用应该是纯粹的数据分类隔离
+
+一个database默认存在一个名为public的schema，若没有显式指定，所有操作都是相对于public
+
+权限分为两种，一种是需要带上下文的，如对某个特定table的UPDATE权限。另一种是不带上下文的，如对database和role的管理
+
