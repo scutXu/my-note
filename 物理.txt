@@ -1,0 +1,71 @@
+RigidBody
+
+mass 质量
+local inertia 局部惯量
+linear damping 线性阻尼
+angular damping 角度阻尼
+friction 摩擦
+rolling friction 滚动摩擦
+spinning friction转动摩擦
+restitution 弹性系数
+
+CollisionShape
+margin
+
+
+
+SoftBody
+
+aerodynamic model 空气动力学模型
+drag coefficient 空气阻力系数 kDG
+lift coefficient 升力系数 kLF
+pressure coefficient 压力系数 kPR
+
+damping coefficient 阻尼系数 kDP
+volume conservation coefficient 体积守恒系数 kVC
+dynamic friction coefficient 动摩擦系数 kDF
+pose matching coefficient 姿态匹配系数 kMT
+rigid contacts hardness kCHR
+kinetic contacts hardness kKHR
+Soft contacts hardness kSHR
+
+linear stiffness coefficient 线性刚度系数 m_kLST 1.0
+angular stiffness coefficient 角刚度系数 m_kAST 1.0
+volume stiffness coefficient 体积刚度系数 m_kVST 1.0
+
+generateClusters
+randomizeConstraints
+generateBendingConstraints
+
+
+Maya SoftBody
+
+* Soft Body Construction
+Input Mesh
+Generate Bend Constraints
+Self Collision
+
+* Soft Body Properties
+Bend Resistance
+Linear Stiffness
+Friction
+Damping
+Mass
+
+* Aerodynamics
+Pressure
+Drag
+Lift
+
+* Pose Matching
+Enable Shape Matching
+Shape Coefficient
+Enable Volume Matching
+Volume Coefficient
+Max Volume Ratio
+
+* Contacts
+Rigid Contact Hardness
+Kinetic Contact Hardness
+Soft Contact Hardness
+Anchor Contact Hardness

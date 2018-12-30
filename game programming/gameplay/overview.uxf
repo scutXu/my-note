@@ -9,8 +9,7 @@
       <w>80</w>
       <h>24</h>
     </coordinates>
-    <panel_attributes>Model
-bg=green</panel_attributes>
+    <panel_attributes>Model</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -32,8 +31,7 @@ bg=green</panel_attributes>
       <w>96</w>
       <h>24</h>
     </coordinates>
-    <panel_attributes>ParticleEmitter
-bg=green</panel_attributes>
+    <panel_attributes>ParticleEmitter</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -44,8 +42,7 @@ bg=green</panel_attributes>
       <w>80</w>
       <h>24</h>
     </coordinates>
-    <panel_attributes>Sprite
-bg=green</panel_attributes>
+    <panel_attributes>Sprite</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -118,7 +115,7 @@ bg=green</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>312</x>
-      <y>80</y>
+      <y>56</y>
       <w>80</w>
       <h>24</h>
     </coordinates>
@@ -129,12 +126,14 @@ bg=green</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>344</x>
-      <y>96</y>
+      <y>72</y>
       <w>24</w>
-      <h>64</h>
+      <h>88</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+    <panel_attributes>lt=-&gt;
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -448,7 +447,7 @@ bg=green</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>464</x>
-      <y>80</y>
+      <y>56</y>
       <w>80</w>
       <h>24</h>
     </coordinates>
@@ -459,11 +458,50 @@ bg=green</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>384</x>
-      <y>80</y>
+      <y>56</y>
       <w>96</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>384</x>
+      <y>72</y>
+      <w>136</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>150.0;10.0;150.0;100.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>152</x>
+      <y>144</y>
+      <w>80</w>
       <h>24</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>100.0;10.0;10.0;10.0</additional_attributes>
+    <panel_attributes>Light</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>224</x>
+      <y>144</y>
+      <w>104</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
   </element>
 </diagram>

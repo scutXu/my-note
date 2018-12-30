@@ -1,4 +1,5 @@
 ##位置
+style属性的position可以是RELATIVE（默认）或ABSOLUTE
 ##对齐
 ##尺寸与自适应
 layout size可能为以下几种值：

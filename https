@@ -1,0 +1,5 @@
+服务器SSL证书
+服务器私钥
+自签名证书
+openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem
+公用名 Common Name
